@@ -11,7 +11,7 @@ export default function PostCard({ post }: PostCardProps) {
     const author = post._embedded?.author?.[0];
 
     return (
-        <article className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+        <article className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden motion-safe:hover:shadow-xl motion-safe:transition-all motion-safe:duration-300 motion-safe:hover:-translate-y-1">
             <Link href={`/posts/${post.slug}`}>
                 <div className="relative h-48 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
                     {featuredImage ? (
@@ -19,7 +19,7 @@ export default function PostCard({ post }: PostCardProps) {
                             src={featuredImage.source_url}
                             alt={featuredImage.alt_text || post.title.rendered}
                             fill
-                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                            className="object-cover motion-safe:group-hover:scale-105 motion-safe:transition-transform motion-safe:duration-500"
                         />
                     ) : (
                         <div className="absolute inset-0 flex items-center justify-center">
@@ -62,7 +62,7 @@ export default function PostCard({ post }: PostCardProps) {
                     className="inline-flex items-center gap-1 mt-4 text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors"
                 >
                     Read more
-                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 motion-safe:group-hover:translate-x-1 motion-safe:transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                 </Link>

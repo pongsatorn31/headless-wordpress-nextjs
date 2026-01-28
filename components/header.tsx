@@ -28,7 +28,7 @@ export default function Header() {
                             <Link
                                 key={item.name}
                                 href={item.href}
-                                className="px-4 py-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-all font-medium"
+                                className="px-4 py-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-all font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             >
                                 {item.name}
                             </Link>
@@ -37,8 +37,10 @@ export default function Header() {
 
                     <button
                         type="button"
-                        className="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100"
+                        className="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+                        aria-expanded={mobileMenuOpen}
                     >
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             {mobileMenuOpen ? (
@@ -56,7 +58,7 @@ export default function Header() {
                             <Link
                                 key={item.name}
                                 href={item.href}
-                                className="block px-4 py-3 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg font-medium"
+                                className="block px-4 py-3 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                                 onClick={() => setMobileMenuOpen(false)}
                             >
                                 {item.name}
