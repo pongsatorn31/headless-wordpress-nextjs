@@ -100,28 +100,19 @@ This starter uses Tailwind CSS. Modify `app/globals.css` for global styles or ex
 
 ## Deployment
 
-### Vercel (Recommended)
-
-1. Push to GitHub
-2. Import to Vercel
-3. Add environment variables
-4. Deploy
-
-### Other Platforms
+### Production Build
 
 ```bash
 npm run build
 npm start
 ```
 
-## Contributing
+The application runs on port 3000 by default. Use a reverse proxy (nginx, Caddy) or deploy to any Node.js hosting platform.
 
-Contributions are welcome. Please open an issue or submit a pull request.
+### Environment Variables
+
+Set `NEXT_PUBLIC_WORDPRESS_URL` in your hosting environment.
 
 ## License
 
 MIT License - free to use for personal or commercial projects.
-
----
-
-Built with Next.js and WordPress REST API
